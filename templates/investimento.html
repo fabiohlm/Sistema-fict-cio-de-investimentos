@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de investimentos</title>
+</head>
+<body>
+    <h1>Sistema de investimentos</h1>
+    <div>
+        <h2>Investimentos</h2>
+        <form action="{{ url_for('addInvestimento') }}" method="post">
+            Tipo de investimento: <br>
+            <input type="radio" id="tipo" name="tipo" value="tesouro direto">
+            <label for="tesouro direto">Tesouro Direto</label><br>
+            <input type="radio" id="tipo" name="tipo" value="renda fixa">
+            <label for="renda fixa">Renda Fixa</label><br>
+            <input type="radio" id="tipo" name="tipo" value="renda variavel">
+            <label for="renda variavel">Renda Variável</label>
+
+            <br>
+            <label for="valor">Valor</label>
+            <input type="number" step="0.01" id="valor" name="valor">
+            <br>
+            <label for="taxa">Taxa(%)</label>
+            <input type="number" step="0.01" id="taxa" name="taxa">
+            <br>
+            <label for="periodo">Periodo(meses)</label>
+            <input type="number" id="periodo" name="periodo">
+            <br>
+            <input type="submit" value="Efetuar">
+        </form>
+        <p><a href="/empinv">Voltar</a></p>
+    </div>
+</body>
+</html>

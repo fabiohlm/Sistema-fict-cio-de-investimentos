@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de investimentos</title>
+</head>
+    <body>
+        <h1>Sistema de investimentos</h1>
+        <h2>Lista de investimentos</h2>
+        <br>
+        <form action="{{ url_for('verInvestimento') }}" method="POST">
+            {% for inv in investimentos %}
+            <input type="radio" id="tipo" name="tipo" value={{ inv.id }}>
+            <label for={{ inv.id }}>ID: {{ inv.id }},Usuário: {{ inv.nomeus }}, Tipo: {{ inv.tipo }}, Valor: {{ inv.valor }}, Periodo: {{ inv.periodo }}, Taxa: {{ inv.taxa }}% ao mês</label>
+            <br>
+            {% endfor %}
+            <p><button type="submit" formaction="/apagarinv">Apagar Investimento selecionado</button><button type="submit" formaction="/altinv">Alterar Investimento selecionado</button><br><button type="submit" formaction="/calcularinv">Calcular ganhos de investimento selecionado</button></p>
+            </form>
+        <p><a href="/">Tela de login</a></p>
+
+    </body>
+</html>
