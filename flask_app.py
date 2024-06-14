@@ -33,7 +33,7 @@ class Consultor(ChatGPT):
                     response_format= self.formato_resposta,
                     messages=[
                           {"role": "system", "content": "Atue como "+self.tipo},
-                          {"role": "user", "content": "Sabendo que a corretora de investimentos que você trabalha oferece apenas renda fixa, renda variável e tesouro direto como opções de investimento, e que, se a situação do cliente não se encaixar com as opções oferecidas, você deverá indicar a melhor opção fora das oferecidas, deixando claro que a corretora não a oferece, responda de forma breve a seguinte pergunta do cliente: "+pergunta}
+                          {"role": "user", "content": "Sabendo que a corretora de investimentos que você trabalha oferece apenas renda fixa, renda variável e tesouro direto como opções de investimento, e que, se a situação do cliente não se encaixar com as opções oferecidas, você deverá indicar a melhor opção fora das oferecidas, deixando claro que a corretora não a oferece, responda de forma breve a seguinte pergunta do cliente, se negando a responder sobre qualquer assunto que não tenha a ver com investimentos: "+pergunta}
                               ]
                      )
         self.chatroom = chatroom
